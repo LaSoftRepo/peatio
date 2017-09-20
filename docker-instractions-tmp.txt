@@ -1,0 +1,21 @@
+1. docker build -t peatio:base .
+2. ./docker/bin/base.sh
+3. ./docker/bin/webapp.sh
+
+IMPORTANT!
+The configurations in docker/conf folder are not set properly!
+
+--------------------------------------------------------------------------------
+
+Run this command to go inside of a running container with app:
+
+  docker exec -it webapp /bin/bash
+
+You can run migrations and assets precompilation there.
+Or you can run these commands and don't go inside of the container:
+
+  docker-bash webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake db:migrate;'
+  docker-bash webapp bash -lc 'cd /home/app/peatio/; RAILS_ENV=production ./bin/rake assets:precompile;'
+
+I took those commands from docker/bin/webapp.sh.
+They are commented in that file for debug purposes.
