@@ -42,3 +42,16 @@ RUN rm -f /etc/service/nginx/down
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# BITCOIN
+RUN add-apt-repository ppa:bitcoin/bitcoin
+RUN apt-get update
+RUN apt-get install bitcoind
+RUN mkdir -p ~/.bitcoin
+ADD docker/conf/bitcoin.conf ~/.bitcoin/bitcoin.conf
+RUN bitcoind
+
+
+# RUN PRODUCTION
+RUN echo "export RAILS_ENV=production" >> ~/.bashrc
+RUN source ~/.bashrc
