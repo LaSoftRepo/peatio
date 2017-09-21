@@ -19,3 +19,7 @@ Or you can run these commands and don't go inside of the container:
 
 I took those commands from docker/bin/webapp.sh.
 They are commented in that file for debug purposes.
+
+--------------------------------------------------------------------------------
+
+If you change something in docker/conf folder you need rebuild peatio:base image.

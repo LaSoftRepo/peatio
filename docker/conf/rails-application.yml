@@ -2,7 +2,7 @@ production:
   # sites hosts
   # session expire seconds
   # admin role account
-  URL_HOST: 'YOUR_DOMAIN'
+  URL_HOST: 'localhost'
   URL_SCHEMA: https
   SESSION_EXPIRE: 60
   API_WHITELIST: []

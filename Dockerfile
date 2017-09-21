@@ -22,6 +22,7 @@ RUN bundle install --without development test --path vendor/bundle
 # RUN ./bin/init_config
 ADD docker/conf/rails-amqp.yml /home/app/peatio/config/amqp.yml
 ADD docker/conf/rails-database.yml /home/app/peatio/config/database.yml
+ADD docker/conf/rails-currencies.yml /home/app/peatio/config/currencies.yml
 ADD docker/conf/rails-application.yml /home/app/peatio/config/application.yml
 ADD docker/conf/nginx-peatio-env.conf /etc/nginx/main.d/peatio-env.conf
 
